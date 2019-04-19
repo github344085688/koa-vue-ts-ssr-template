@@ -8,7 +8,6 @@ const clientManifest = require('../dist/vue-ssr-client-manifest.json')
 const serverBundle = require('../dist/vue-ssr-server-bundle.json')
 
 const resolve = file => path.resolve(__dirname, file)
-
 const template = fs.readFileSync(resolve('./template.html'), 'utf-8')
 const renderer = createBundleRenderer(serverBundle, {
   runInNewContext: false,
@@ -16,11 +15,13 @@ const renderer = createBundleRenderer(serverBundle, {
   clientManifest
 })
 
+
 const server = new Koa()
 server.use(koaStatic(resolve('../dist')))
-server.use(async (context, next) => {
+server.use ( async(context, next) => {
   const html = await renderer.renderToString({
-    url: context.url
+    url: context.url,
+    title: ''
   })
   context.body = html
 })

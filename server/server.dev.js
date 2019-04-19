@@ -39,13 +39,15 @@ koaWebpack({ compiler, devMiddleware: { serverSideRender: true, publicPath: '/' 
     const clientManifestPath = path.join(clientConfig.output.path, 'vue-ssr-client-manifest.json')
     const clientManifest = JSON.parse(middleware.devMiddleware.fileSystem.readFileSync(clientManifestPath, 'utf-8'))
     const template = fs.readFileSync(resolve('./template.html'), 'utf-8')
-    const renderer = createBundleRenderer(serverBundle, {
+
+   const renderer = createBundleRenderer(serverBundle,{
       runInNewContext: false,
       template,
       clientManifest
     })
     const html = await renderer.renderToString({
-      url: context.url
+      url: context.url,
+      title: ''
     })
     context.body = html
   })

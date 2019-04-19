@@ -43,9 +43,7 @@
 html,
 body {
   font-family: 'SourceHanSansCN-Light' !important;
-  font-size: 0.18666667rem !important;
   -webkit-text-size-adjust: none !important;
-  font-weight: 400;
 }
 h1,
 h2,
@@ -1042,4 +1040,4 @@ textarea {
   -webkit-animation: all 0.5s;
   animation: all 0.5s;
 }
-/*# sourceMappingURL=45f1edf3bf80b3d6de7c.css.map*/
+/*# sourceMappingURL=35f1ee18d0bea1e6489d.css.map*/

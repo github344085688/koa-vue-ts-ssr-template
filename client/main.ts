@@ -5,10 +5,10 @@ import { createStore } from './createStore'
 import Component from 'vue-class-component'
 import plugins from './plugins'
 import flex from './config'
-// import titleMixin from './config/title'
+import mixin from './mixin'
+Vue.mixin(mixin)
 Vue.use(flex)
 Vue.use(plugins)
-// Vue.mixin(titleMixin)
 Component.registerHooks([
   'asyncData' // for ssr
 ])

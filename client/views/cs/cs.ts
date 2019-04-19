@@ -2,7 +2,7 @@
  * Created by f on 2019/4/2.
  */
 import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-property-decorator';
-import template from './main.vue'
+import template from './cs.vue'
 import axAxios from '../../axios'
 // import { AsyncDataParams } from '../types/shims-asyncData'
 @Component(
@@ -10,19 +10,14 @@ import axAxios from '../../axios'
     mixins: [template],
     components: {},
     title () {
-      return this.title;
+      return '原理请看JavaScript replace() 方法介绍';
     }
   }
 )
-export default class Main extends axAxios {
+export default class Cs extends axAxios {
   // asyncData (params: AsyncDataParams) {
   //   return params.store.dispatch('getInfo')
   // }
-
-  title: any = "dashsjdgas";
-  metaInfo: {
-    title: 'BookTitle',
-  }
 
   mounted(){
 
@@ -30,10 +25,6 @@ export default class Main extends axAxios {
   searchInfo: object = {
     userName: '',
     passWord: ''
-  };
-
-  Submitsssssss() {
-
   };
 
   Submit() {

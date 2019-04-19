@@ -2,7 +2,7 @@
  * Created by f on 2019/4/2.
  */
 import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-property-decorator';
-import template from './main.vue'
+import template from './foot.vue'
 import axAxios from '../../axios'
 // import { AsyncDataParams } from '../types/shims-asyncData'
 @Component(
@@ -10,16 +10,14 @@ import axAxios from '../../axios'
     mixins: [template],
     components: {},
     title () {
-      return this.title;
+      return 'Hello there i am getting this error:';
     }
   }
 )
-export default class Main extends axAxios {
+export default class Foot extends axAxios {
   // asyncData (params: AsyncDataParams) {
   //   return params.store.dispatch('getInfo')
   // }
-
-  title: any = "dashsjdgas";
   metaInfo: {
     title: 'BookTitle',
   }
@@ -30,10 +28,6 @@ export default class Main extends axAxios {
   searchInfo: object = {
     userName: '',
     passWord: ''
-  };
-
-  Submitsssssss() {
-
   };
 
   Submit() {

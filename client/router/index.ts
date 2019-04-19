@@ -3,8 +3,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const main = (): any => import(/* webpackChunkName: "group-foo" */ '..//views/main/main.ts')
-const warehouse = (): any => import(/* webpackChunkName: "warehouse" */ '../views/foo.vue')
-const cs = (): any => import(/* webpackChunkName: "warehouse" */ '../views/cs.vue')
+const foo = (): any => import(/* webpackChunkName: "warehouse" */ '../views/foot/foot.ts')
+const csst = (): any => import(/* webpackChunkName: "warehouse" */ '../views/cs/cs.ts')
 export const createRouter = () =>
   new Router({
     mode: 'history',
@@ -21,12 +21,12 @@ export const createRouter = () =>
       {
         path: '/foo',
         name: 'foo',
-        component: warehouse
+        component: foo
       },
       {
         path: '/cs',
         name: 'cs',
-        component: cs
+        component: csst
       }
     ]
   })
