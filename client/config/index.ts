@@ -29,15 +29,7 @@ const flex = {
         }
       }
     })
-    // clientHeight() {
-    //   return EASY_ENV_IS_BROWSER ? document.body.clientHeight : '';
-    // }
     console.log('docEl')
-    /*if (typeof document) {
-     let docEl = document.documentElement;
-
-     }*/
-
   }
 }
 export default flex;

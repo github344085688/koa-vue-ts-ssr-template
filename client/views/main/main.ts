@@ -4,22 +4,28 @@
 import { Component, Emit, Inject, Model, Prop, Provide, Vue, Watch } from 'vue-property-decorator';
 import template from './main.vue'
 import axAxios from '../../axios'
-// import { AsyncDataParams } from '../types/shims-asyncData'
+import { AsyncDataParams } from '../../../types/shims-asyncData'
+import { GET_IN_FO } from '../../store/module/author/type/action'
+import { mapGetters } from 'vuex'
+import { AUTHOR_GET_COLLECTION } from '../../store/module/author/type/getter'
 @Component(
   {
     mixins: [template],
     components: {},
     title () {
-      return this.title;
-    }
+      return 'Hello there i am getting this error:';
+    },
+    asyncData (params: AsyncDataParams) {
+      return params.store.dispatch(GET_IN_FO)
+    },
+    computed: mapGetters({
+      authors: AUTHOR_GET_COLLECTION
+    })
+
   }
 )
 export default class Main extends axAxios {
-  // asyncData (params: AsyncDataParams) {
-  //   return params.store.dispatch('getInfo')
-  // }
 
-  title: any = "dashsjdgas";
   metaInfo: {
     title: 'BookTitle',
   }
@@ -27,17 +33,17 @@ export default class Main extends axAxios {
   mounted(){
 
   }
+  item () {
+    return this.$store.state
+  }
   searchInfo: object = {
     userName: '',
     passWord: ''
   };
 
-  Submitsssssss() {
-
-  };
-
   Submit() {
-    this.apis$.post('/api/logIn', this.searchInfo).subscribe(
+    console.log( this.apis$.post('/logIn', this.searchInfo))
+    this.apis$.post('/logIn', this.searchInfo).subscribe(
       (res: any) => {
         console.log(res)
       },

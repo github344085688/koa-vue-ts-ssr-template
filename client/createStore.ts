@@ -5,9 +5,18 @@ Vue.use(Vuex)
 
 export const createStore = () =>
   new Vuex.Store({
+    state: {
+      items: {}
+    },
     actions: {
-      getInfo () {
-        // 1
+      getInfo ({ commit }, id) {
+        console.log('gggggggggggggggggggggg')
+        commit('setItem', { id, 'item': 'item' })
+      }
+    },
+    mutations: {
+      setItem (state, { id, item }) {
+        Vue.set(state.items, id, item)
       }
     }
   })

@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="content" v-on:click="Submit">content</div>
-    <div class="content" v-on:click="skd">ss</div>
+    <div class="s">ddddddddddddddddddd</div>
+    <div class="content" v-on:click="skd" v-html="item()"></div>
+    <div class="s">ddddddddddddddddddd</div>
+    <div class="content" v-on:click="skd" >{{authors}}</div>
+    <div class="s">ddddddddddddddddddd</div>
     <router-link to="/foo">Bar</router-link>
     <br>
     <router-link to="/Login">Main</router-link>

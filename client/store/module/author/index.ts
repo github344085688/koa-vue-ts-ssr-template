@@ -1,11 +1,10 @@
+import { State } from './state'
 import actions from './actions'
 import mutations from './mutations'
-import { State } from './state'
-import getters from './getters';
-
+import getters from './getters'
 export const author = {
-    state: new State(),
-    mutations: mutations,
-    actions: actions,
-    getters: getters
+  state: new State(),
+  actions: actions,
+  mutations: mutations,
+  getters: getters
 };

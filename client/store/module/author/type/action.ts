@@ -1,1 +1,4 @@
 export const AUTHORS_FETCH_COLLECTION = 'AUTHORS_FETCH_COLLECTION';
+export const GET_IN_FO = 'GET_IN_FO';
+
+
