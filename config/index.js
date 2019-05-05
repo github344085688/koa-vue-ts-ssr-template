@@ -5,6 +5,10 @@ module.exports = {
   public: {
     assetsSubDirectory: './'
   },
+  api: {
+    serverRunPort: baseURL,
+    timeout: 3000
+  },
   client: {
     serverRunPort: 4000,
     assetsSubDirectory: './',
@@ -13,7 +17,7 @@ module.exports = {
   },
 
   server: {
-    serverRunPort: 8000,
+    serverRunPort: 7800,
     assetsSubDirectory: './',
     productionSourceMap: true
   }

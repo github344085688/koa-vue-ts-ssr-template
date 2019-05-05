@@ -1,4 +1,4 @@
 export class State {
-  collection: {[key: string]: any}[] = [];
+  collection: any ;
   filteredCollection: {[key: string]: any}[] = [];
 }

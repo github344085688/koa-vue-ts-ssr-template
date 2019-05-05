@@ -2,9 +2,9 @@
   <div>
     <div class="content" v-on:click="Submit">content</div>
     <div class="s">ddddddddddddddddddd</div>
-    <div class="content" v-on:click="skd" v-html="item()"></div>
+    <div class="content"   v-html="item()"></div>
     <div class="s">ddddddddddddddddddd</div>
-    <div class="content" v-on:click="skd" >{{authors}}</div>
+    <div class="content"   >{{authors}}</div>
     <div class="s">ddddddddddddddddddd</div>
     <router-link to="/foo">Bar</router-link>
     <br>

@@ -14,13 +14,3 @@ declare module 'vue/types/options' {
         asyncData?: AsyncData
     }
    }
-
-// import Vue from 'vue'
-//
-// declare module 'vue/types/vue' {
-//   interface VueConstructor {
-//     $store?: any
-//     $options?: any
-//     title?:any
-//   }
-// }

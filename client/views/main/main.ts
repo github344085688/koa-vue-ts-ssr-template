@@ -13,7 +13,7 @@ import { AUTHOR_GET_COLLECTION } from '../../store/module/author/type/getter'
     mixins: [template],
     components: {},
     title () {
-      return 'Hello there i am getting this error:';
+      return this.title;
     },
     asyncData (params: AsyncDataParams) {
       return params.store.dispatch(GET_IN_FO)
@@ -25,31 +25,46 @@ import { AUTHOR_GET_COLLECTION } from '../../store/module/author/type/getter'
   }
 )
 export default class Main extends axAxios {
+  title:string= 'BookTitle';
 
-  metaInfo: {
-    title: 'BookTitle',
+  constructor() {
+    super()
+    console.log('ssss')
   }
 
-  mounted(){
+  mounted() {
 
   }
-  item () {
+
+  item() {
     return this.$store.state
   }
+
   searchInfo: object = {
     userName: '',
     passWord: ''
   };
 
-  Submit() {
-    console.log( this.apis$.post('/logIn', this.searchInfo))
-    this.apis$.post('/logIn', this.searchInfo).subscribe(
-      (res: any) => {
-        console.log(res)
-      },
-      (err: any) => {
+  async Submit() {
+    let searchInfo = await new Promise((resolve, reject) => {
+      try {
+        this.apis$.post('/newList-select-by-paging', {
+          'col01': '76',
+          'col02': '76',
+          'col05': '76'
+        }).subscribe(
+          (res: any) => {
+            resolve(res);
+          },
+          (err: any) => {
+            reject(err)
+          }
+        )
+      } catch (e) {
+        reject(e)
       }
-    )
+    })
+    console.log(searchInfo ? searchInfo : 'ssss')
   };
 
   skd() {
