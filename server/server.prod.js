@@ -15,10 +15,9 @@ const renderer = createBundleRenderer(serverBundle, {
   clientManifest
 })
 
-
 const server = new Koa()
 server.use(koaStatic(resolve('../dist')))
-server.use ( async(context, next) => {
+server.use(async (context, next) => {
   const html = await renderer.renderToString({
     url: context.url,
     title: ''

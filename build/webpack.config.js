@@ -47,63 +47,17 @@ module.exports = {
         }
       },
       {
-        test: /\.styl(us)?$/,
-        use: isProduction
-          ? ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            publicPath: '../',
-            use: [
-              'css-loader',
-              {
-                loader: 'px2rem-loader',
-                options: {
-                  remUni: 75,
-                  remPrecision: 8
-                }
-              },
-              'postcss-loader',
-              'stylus-loader'
-            ]
-          }) : [
-            'vue-style-loader',
-            'css-loader',
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          publicPath: '../',
+          use: [
             {
-              loader: 'px2rem-loader',
+              loader: 'css-loader',
               options: {
-                remUni: 75,
-                remPrecision: 8
+                // minimize: true
               }
             },
-            'postcss-loader',
-            'stylus-loader'
-          ]
-      },
-      {
-        test: /\.scss$/,
-        use: isProduction
-          ? ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            publicPath: '../',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  // minimize: true
-                }
-              },
-              {
-                loader: 'px2rem-loader',
-                options: {
-                  remUni: 75,
-                  remPrecision: 8
-                }
-              },
-              'postcss-loader',
-              'sass-loader'
-            ]
-          }) : [
-            'vue-style-loader',
-            'css-loader',
             {
               loader: 'px2rem-loader',
               options: {
@@ -114,27 +68,14 @@ module.exports = {
             'postcss-loader',
             'sass-loader'
           ]
+        })
       },
       {
         test: /\.less$/,
-        use: isProduction
-          ? ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            publicPath: '../',
-            use: [
-              'css-loader',
-              {
-                loader: 'px2rem-loader',
-                options: {
-                  remUni: 75,
-                  remPrecision: 8
-                }
-              },
-              'postcss-loader',
-              'less-loader'
-            ]
-          }) : [
-            'vue-style-loader',
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          publicPath: '../',
+          use: [
             'css-loader',
             {
               loader: 'px2rem-loader',
@@ -146,26 +87,14 @@ module.exports = {
             'postcss-loader',
             'less-loader'
           ]
+        })
       },
       {
         test: /\.css$/,
-        use: isProduction
-          ? ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            publicPath: '../',
-            use: [
-              'css-loader',
-              {
-                loader: 'px2rem-loader',
-                options: {
-                  remUni: 75,
-                  remPrecision: 8
-                }
-              },
-              'postcss-loader'
-            ]
-          }) : [
-            'vue-style-loader',
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          publicPath: '../',
+          use: [
             'css-loader',
             {
               loader: 'px2rem-loader',
@@ -176,6 +105,7 @@ module.exports = {
             },
             'postcss-loader'
           ]
+        })
       }
     ]
   },

@@ -1,0 +1,10 @@
+.contentaaaa {
+  font-size: 120px;
+  flex: 1;
+  display: grid;
+  //grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  color: #56a7fd;
+  animation: all 0.5s;
+}

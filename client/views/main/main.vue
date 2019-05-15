@@ -14,4 +14,4 @@
     <br>
   </div>
 </template>
-<style lang="less" src="./main.less"/>
+<style src="./main.scss" lang="scss" />

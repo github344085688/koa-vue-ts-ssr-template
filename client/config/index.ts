@@ -1,52 +1,33 @@
-/**
- * Created by f on 2019/4/3.
- */
-import Vue from 'vue'
-const flex = {
-  install: (vue: any) => {
-    Vue.mixin({
-      mounted () {
-        (function (doc, win) {
-          let docEl = doc.documentElement,
-            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            recalc = function () {
-              let clientWidth = docEl.clientWidth;
-              if (!clientWidth) return;
-              if (clientWidth < 750) {
-                docEl.style.fontSize = 30 * (clientWidth / 750) + 'px';
-              } else {
-                docEl.style.fontSize = 14 + 'px';
-              }
-            };
-          if (!doc.addEventListener) return;
-          win.addEventListener(resizeEvt, recalc, false);
-          doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-      },
-      methods: {
-        greetingFns: function () {
-          console.log('greeting');
-        }
-      }
-    })
-    console.log('docEl')
+const serverFlexMixin = {
+  created () {
   }
 }
-export default flex;
-/*
- (function (doc, win) {
- let docEl = doc.documentElement,
- resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
- recalc = function () {
- let clientWidth = docEl.clientWidth;
- if (!clientWidth) return;
- if (clientWidth < 750) {
- docEl.style.fontSize = 30 * (clientWidth / 750) + 'px';
- } else {
- docEl.style.fontSize = 14 + 'px';
- }
- };
- if (!doc.addEventListener) return;
- win.addEventListener(resizeEvt, recalc, false);
- doc.addEventListener('DOMContentLoaded', recalc, false);
- })(document, window);*/
+
+const clientFlexMixin = {
+  mounted () {
+    let screenWidth:any
+    function setBodyFontSize (width: any) {
+      if (width < 750) {
+        document.body.style.fontSize = 30 * (width / 750) + 'px'
+      } else {
+        document.body.style.fontSize = 14 + 'px'
+      }
+    }
+    if (!document.body.style.fontSize) {
+      screenWidth = document.body.clientWidth
+      setBodyFontSize(screenWidth)
+    }
+    window.onresize = () => {
+      return (() => {
+        screenWidth = document.body.clientWidth
+        setTimeout(() => {
+          setBodyFontSize(screenWidth)
+        }, 400)
+      })()
+    }
+  }
+}
+
+export default process.env.VUE_ENV === 'server'
+  ? serverFlexMixin
+  : clientFlexMixin

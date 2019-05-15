@@ -10,4 +10,4 @@
     <br>
   </div>
 </template>
-<style lang="less" src="./foot.less"/>
+<style lang="scss"  src="./foot.scss"/>

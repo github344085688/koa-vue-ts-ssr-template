@@ -40,7 +40,7 @@ koaWebpack({ compiler, devMiddleware: { serverSideRender: true, publicPath: '/' 
     const clientManifest = JSON.parse(middleware.devMiddleware.fileSystem.readFileSync(clientManifestPath, 'utf-8'))
     const template = fs.readFileSync(resolve('./template.html'), 'utf-8')
 
-   const renderer = createBundleRenderer(serverBundle,{
+    const renderer = createBundleRenderer(serverBundle, {
       runInNewContext: false,
       template,
       clientManifest

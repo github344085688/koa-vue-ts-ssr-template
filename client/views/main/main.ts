@@ -29,7 +29,6 @@ export default class Main extends axAxios {
 
   constructor() {
     super()
-    console.log('ssss')
   }
 
   mounted() {

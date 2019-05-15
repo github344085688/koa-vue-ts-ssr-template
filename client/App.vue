@@ -9,5 +9,4 @@
     <router-view></router-view>
   </div>
 </template>
-<style lang="scss" src="./assets/css/typography.scss"></style>
-<style lang="css" src="./assets/css/fonts/unis-font.css"></style>
+<!--<style lang="scss" src="./assets/css/typography.scss"></style>-->

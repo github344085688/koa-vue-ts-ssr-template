@@ -8,7 +8,7 @@ import flex from './config'
 import mixin from './mixin'
 import { sync } from 'vuex-router-sync'
 Vue.mixin(mixin)
-Vue.use(flex)
+Vue.mixin(flex)
 Vue.use(plugins)
 Component.registerHooks([
   'asyncData' // for ssr

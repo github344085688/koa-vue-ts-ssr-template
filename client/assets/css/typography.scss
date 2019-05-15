@@ -113,7 +113,7 @@ input, button, select, optgroup, textarea {
   font-family: inherit;
   font-size:inherit;
   /* line-height: inherit; */}
-
+/*
 @font-face {
   font-family: 'unis';
   src:  url('./fonts/unis.eot?vo27fv');
@@ -134,7 +134,7 @@ input, button, select, optgroup, textarea {
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
+  !* Better Font Rendering =========== *!
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -408,7 +408,7 @@ input, button, select, optgroup, textarea {
     }
   }
 
-  /*arrows*/
+  !*arrows*!
   &arrow {
     display: inline-block;
     position: relative;
@@ -455,5 +455,5 @@ input, button, select, optgroup, textarea {
       -webkit-transform: rotate(-90deg) translateY(-50%) translateX(50%);
     }
   }
-}
+}*/
 
