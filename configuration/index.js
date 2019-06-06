@@ -1,10 +1,5 @@
-/**
- * Created by f on 2019/4/3.
- */
-/*
-exports.install = (Vue, options) => {
 
-}*/
+/*
 
 const flex = {
   install: (vue:any) => {
@@ -50,3 +45,4 @@ const flex = {
 }
 
 export default flex;
+*/

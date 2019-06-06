@@ -14,4 +14,4 @@
     <br>
   </div>
 </template>
-<style src="./main.scss" lang="scss" />
+<style src="./main.scss" lang="scss"/>
