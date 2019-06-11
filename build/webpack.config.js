@@ -47,6 +47,30 @@ module.exports = {
         }
       },
       {
+        test: /\.stylus$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          publicPath: '../',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                // minimize: true
+              }
+            },
+            {
+              loader: 'px2rem-loader',
+              options: {
+                remUni: 75,
+                remPrecision: 8
+              }
+            },
+            'postcss-loader',
+            'stylus-loader'
+          ]
+        })
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'vue-style-loader',
