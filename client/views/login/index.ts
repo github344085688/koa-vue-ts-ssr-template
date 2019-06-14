@@ -33,19 +33,12 @@ export default class login extends axAxios {
   }
 
   mounted () {
-    let _this = this
     this.searchByInput
       .pipe(debounceTime(800)
       )
       .subscribe(term => {
-        _this.searchByInputReport;
       })
   }
-
-  searchByInputReport() {
-    console.log('vaasd')
-  }
-
   Submit () {
     this.apis$.post('/api/logIn', this.searchInfo).subscribe(
       (res: any) => {

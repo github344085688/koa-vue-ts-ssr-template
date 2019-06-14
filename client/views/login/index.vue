@@ -76,7 +76,7 @@
           /*no*/
 
           &:nth-of-type(2)
-            $pad(l 5px no,''); text-align center;font-size 65px;/*no*/ line-height 30px;/*no*/letter-spacing 15px;/*no*/color #d36f39; font "Tahoma";font-weight bold;text-shadow 0px 2px 0px rgba(100,100,100,0.8)/*no*/
+            $pad(l 5px no,''); text-align center;font-size 65px;/*no*/ line-height 30px;/*no*/letter-spacing 15px;/*no*/color #d36f39; font "Tahoma";font-weight bold;    text-shadow: 0px 2px 0px rgba(0,59,28,0.8);/*no*/
 
       .login-conent
         $wh(w 600px no,h 240px);$mar(t 30px no,r auto , b 0, l auto); $dflex(fd row,'');
@@ -99,7 +99,7 @@
             display block;font-size 30px;/*no*/ color rgb(141, 141, 141);text-align left;text-shadow 0px 2px 0px rgba(255,255,255,0.8)/*no*/; font-weight bold
 
           .Login_Here
-            display block;font-size: 53px; /*no*/ line-height 1.8; color: rgb(124, 124, 124);text-align: left; text-shadow 0px 2px 0px rgba(255,255,255,0.8);font-weight bold
+            display block;font-size: 53px; /*no*/ line-height 1.8; color: rgb(124, 124, 124);text-align: left; text-shadow 0px 2px 0px rgba(255,255,255,0.8);/*no*/ font-weight bold
 
           .line
             $wh(h 2px no,''); background #ccc; margin 0; display block;border-bottom solid 1px #fff
@@ -132,7 +132,9 @@
               flex 1;fz(24px no); cursor pointer;margin 0 15px;/*no*/ color #7c7c7c;text-align center; line-height 50px;/*no*/ border-radius: 4px;/*no*/ background-image: linear-gradient(180deg, rgba(202, 208, 209, 0.83)  50%, rgba(202, 208, 209, 0.83) 100%); box-shadow: 0px 2px 0px 0px rgba(162, 162, 162, 0.67),inset 0px 1px 0px 0px rgba(232, 232, 232, 0); text-shadow 0px 2px 0px rgba(255,255,255,0.8);border none;outline none
 
             .Submit
-              color #ffffff;background-image: linear-gradient(180deg, rgb(206, 106, 57) 50%, #d36f39 100%); box-shadow: 0px 2px 0px 0px rgba(162, 162, 162, 0.87),inset 0px 1px 0px 0px rgba(232, 232, 232, 0); text-shadow 0px 2px 0px rgba(73,73,73,0.8)
+              color #ffffff;background-image: linear-gradient(180deg, rgb(206, 106, 57) 50%, #d36f39 100%); box-shadow: 0px 2px 0px 0px rgba(162, 162, 162, 0.87),inset 0px 1px 0px 0px rgba(232, 232, 232, 0); text-shadow 0px 2px 0px rgba(73,73,73,0.8);transition: all 2s;
+              &:hover
+                background-image: linear-gradient(180deg, #e69f8beb 50%, #e69f8b 100%); box-shadow: 0px 2px 0px 0px rgba(162, 162, 162, 0.67),inset 0px 1px 0px 0px rgba(232, 232, 232, 0); text-shadow 0px 2px 0px rgba(255,255,255,0.8);transition: all 2s;
 
       .inputBoxs
         $wh(w 400px no,h 350px);$pAbM(p,m,l 0, r 0,b 0, t 0);
