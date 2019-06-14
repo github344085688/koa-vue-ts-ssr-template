@@ -45,6 +45,7 @@ Validator.extend('phone', {
 })
 
 const config = {
+  locale: 'en',
   delay: 100,
   events: 'input|blur',
   dictionary: dictionary
