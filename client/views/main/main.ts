@@ -34,7 +34,7 @@ export default class Main extends axAxios {
   mounted() {
 
   }
-
+//recommended lp
   item() {
     return this.$store.state
   }

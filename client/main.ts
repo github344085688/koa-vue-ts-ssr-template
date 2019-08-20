@@ -6,12 +6,12 @@ import Component from 'vue-class-component'
 import VeeValidate from 'vee-validate'
 import config from './config/validation'
 import plugins from './plugins'
-import flex from './config'
+import configureBehavior from './config'
 import mixin from './mixin'
 import { sync } from 'vuex-router-sync'
 Vue.use(VeeValidate, config)
 Vue.mixin(mixin)
-Vue.mixin(flex)
+Vue.mixin(configureBehavior)
 Vue.use(plugins)
 Component.registerHooks([
   'asyncData' // for ssr
